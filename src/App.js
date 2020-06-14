@@ -39,51 +39,60 @@ export default function App() {
       ) {
         if (arr[0] === "x") setWinner("x");
         else setWinner("0");
+        window.alert("Game Over winner :  " + winner)
       } else if (
         (arr[1] === "x" && arr[4] === "x" && arr[7] === "x") ||
         (arr[1] === "0" && arr[4] === "0" && arr[7] === "0")
       ) {
         if (arr[1] === "x") setWinner("x");
         else setWinner("0");
+        window.alert("Game Over winner :  " + winner)
       } else if (
         (arr[2] === "x" && arr[5] === "x" && arr[8] === "x") ||
         (arr[2] === "0" && arr[5] === "0" && arr[8] === "0")
       ) {
         if (arr[2] === "x") setWinner("x");
         else setWinner("0");
+        window.alert("Game Over winner :  " + winner)
       } else if (
         (arr[0] === "x" && arr[1] === "x" && arr[2] === "x") ||
         (arr[0] === "0" && arr[1] === "0" && arr[2] === "0")
       ) {
         if (arr[0] === "x") setWinner("x");
         else setWinner("0");
+        window.alert("Game Over winner :  " + winner)
       } else if (
         (arr[3] === "x" && arr[4] === "x" && arr[5] === "x") ||
         (arr[3] === "0" && arr[4] === "0" && arr[5] === "0")
       ) {
         if (arr[3] === "x") setWinner("x");
         else setWinner("0");
+        window.alert("Game Over winner :  " + winner)
       } else if (
         (arr[6] === "x" && arr[7] === "x" && arr[8] === "x") ||
         (arr[6] === "0" && arr[7] === "0" && arr[8] === "0")
       ) {
         if (arr[6] === "x") setWinner("x");
         else setWinner("0");
+        window.alert("Game Over winner :  " + winner)
       } else if (
         (arr[0] === "x" && arr[4] === "x" && arr[8] === "x") ||
         (arr[0] === "0" && arr[4] === "0" && arr[8] === "0")
       ) {
         if (arr[0] === "x") setWinner("x");
         else setWinner("0");
+        window.alert("Game Over winner :  " + winner)
       } else if (
         (arr[2] === "x" && arr[4] === "x" && arr[6] === "x") ||
         (arr[2] === "0" && arr[4] === "0" && arr[6] === "0")
       ) {
         if (arr[2] === "x") setWinner("x");
         else setWinner("0");
+        window.alert("Game Over winner :  " + winner)
       }
       else if(count>=9)
       {
+        window.alert("Game Over winner :  " + winner)
         setWinner("Draw")
       }
     });
