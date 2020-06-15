@@ -20,82 +20,86 @@ export default function App() {
     }
 
     const func = (ind) => {
-      if(count%2===0 && arr[ind]==='')
+
+      if(count<0)
       {
-        arr[ind] = 'x';
+        arr[ind] = ''
+      }
+      else if(count%2===0 && arr[ind]==='')
+      {
+        arr[ind] = 'X';
         setCount(count+1)
       }
       else if(count%2===1 && arr[ind]==='')
       {
-        arr[ind] = '0';
+        arr[ind] = 'O';
         setCount(count+1)
       }
     }
     
     useEffect(() => {
       if (
-        (arr[0] === "x" && arr[3] === "x" && arr[6] === "x") ||
-        (arr[0] === "0" && arr[3] === "0" && arr[6] === "0")
+        (arr[0] === "X" && arr[3] === "X" && arr[6] === "X") ||
+        (arr[0] === "O" && arr[3] === "O" && arr[6] === "O")
       ) {
-        if (arr[0] === "x") setWinner("x");
-        else setWinner("0");
-        window.alert("Game Over winner :  " + winner)
+        if (arr[0] === "X") setWinner("X");
+        else setWinner("O");
+        setCount(-1)
       } else if (
-        (arr[1] === "x" && arr[4] === "x" && arr[7] === "x") ||
-        (arr[1] === "0" && arr[4] === "0" && arr[7] === "0")
+        (arr[1] === "X" && arr[4] === "X" && arr[7] === "X") ||
+        (arr[1] === "O" && arr[4] === "O" && arr[7] === "O")
       ) {
-        if (arr[1] === "x") setWinner("x");
-        else setWinner("0");
-        window.alert("Game Over winner :  " + winner)
+        if (arr[1] === "X") setWinner("X");
+        else setWinner("O");
+        setCount(-1)
       } else if (
-        (arr[2] === "x" && arr[5] === "x" && arr[8] === "x") ||
-        (arr[2] === "0" && arr[5] === "0" && arr[8] === "0")
+        (arr[2] === "X" && arr[5] === "X" && arr[8] === "X") ||
+        (arr[2] === "O" && arr[5] === "O" && arr[8] === "O")
       ) {
-        if (arr[2] === "x") setWinner("x");
-        else setWinner("0");
-        window.alert("Game Over winner :  " + winner)
+        if (arr[2] === "X") setWinner("X");
+        else setWinner("O");
+        setCount(-1)
       } else if (
-        (arr[0] === "x" && arr[1] === "x" && arr[2] === "x") ||
-        (arr[0] === "0" && arr[1] === "0" && arr[2] === "0")
+        (arr[0] === "X" && arr[1] === "X" && arr[2] === "X") ||
+        (arr[0] === "O" && arr[1] === "O" && arr[2] === "O")
       ) {
-        if (arr[0] === "x") setWinner("x");
-        else setWinner("0");
-        window.alert("Game Over winner :  " + winner)
+        if (arr[0] === "X") setWinner("X");
+        else setWinner("O");
+        setCount(-1)
       } else if (
-        (arr[3] === "x" && arr[4] === "x" && arr[5] === "x") ||
-        (arr[3] === "0" && arr[4] === "0" && arr[5] === "0")
+        (arr[3] === "X" && arr[4] === "X" && arr[5] === "X") ||
+        (arr[3] === "O" && arr[4] === "O" && arr[5] === "O")
       ) {
-        if (arr[3] === "x") setWinner("x");
-        else setWinner("0");
-        window.alert("Game Over winner :  " + winner)
+        if (arr[3] === "X") setWinner("X");
+        else setWinner("O");
+        setCount(-1)
       } else if (
-        (arr[6] === "x" && arr[7] === "x" && arr[8] === "x") ||
-        (arr[6] === "0" && arr[7] === "0" && arr[8] === "0")
+        (arr[6] === "X" && arr[7] === "X" && arr[8] === "X") ||
+        (arr[6] === "O" && arr[7] === "O" && arr[8] === "O")
       ) {
-        if (arr[6] === "x") setWinner("x");
+        if (arr[6] === "X") setWinner("X");
         else setWinner("0");
-        window.alert("Game Over winner :  " + winner)
+        setCount(-1)
       } else if (
-        (arr[0] === "x" && arr[4] === "x" && arr[8] === "x") ||
-        (arr[0] === "0" && arr[4] === "0" && arr[8] === "0")
+        (arr[0] === "X" && arr[4] === "X" && arr[8] === "X") ||
+        (arr[0] === "O" && arr[4] === "O" && arr[8] === "O")
       ) {
-        if (arr[0] === "x") setWinner("x");
-        else setWinner("0");
-        window.alert("Game Over winner :  " + winner)
+        if (arr[0] === "X") setWinner("X");
+        else setWinner("O");
+        setCount(-1)
       } else if (
-        (arr[2] === "x" && arr[4] === "x" && arr[6] === "x") ||
-        (arr[2] === "0" && arr[4] === "0" && arr[6] === "0")
+        (arr[2] === "X" && arr[4] === "X" && arr[6] === "X") ||
+        (arr[2] === "O" && arr[4] === "O" && arr[6] === "O")
       ) {
-        if (arr[2] === "x") setWinner("x");
-        else setWinner("0");
-        window.alert("Game Over winner :  " + winner)
+        if (arr[2] === "X") setWinner("X");
+        else setWinner("O");
+        setCount(-1)
       }
       else if(count>=9)
       {
-        window.alert("Game Over winner :  " + winner)
         setWinner("Draw")
       }
-    });
+    },[setWinner,arr,count,setCount,setArr]);
 
     let func1 = () => {
       setArr(["","","","","","","","","",""])
@@ -106,7 +110,7 @@ export default function App() {
 
   return (
     <div  id="top">
-    <h4>Winner :  {winner}</h4>
+    <h4 className="card-panel hoverable  red lighten-4" style={{minWidth:"15rem",borderRadius:"1rem"}}  >WINNER :  {winner}</h4>
     <button className="btn" onClick={func1} >Restart</button>
     <div className="card-panel pink darken-2" id="box" >
       <div style={style} onClick={()=>{func(0)}} >{arr[0]}</div>
